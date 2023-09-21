@@ -1,0 +1,26 @@
+.bg {
+    /* The image used */
+
+    background-image: 
+        url("../../assets/img/1.png");
+    /* Full height */
+    height: 720px;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 80px;
+    background-size: cover;
+}
+
+.box {
+    height: 700px;
+    padding-bottom: 150px;
+    padding: 25px;
+}
+
+
+.login-form {
+    max-width: 200px; /* Adjust the maximum width of the form */
+    margin: 0 auto; /* Center the form horizontally */
+    padding-bottom: 100px; /* Add padding at the bottom of the form */
+}
