@@ -42,19 +42,27 @@ export class UpdateUserDetailsComponent implements OnInit {
     this.userId = localStorage.getItem("userId");
     console.log(this.userId);
     if (this.userId == null) {
-      this.router.navigate(["/error", "login to continue"]);
+        this.router.navigate(["/error", "login to continue"]);
     } else {
-      this.userId = parseInt(this.userId);
-      this.userService.getUser(this.userId).subscribe(
-        (data) => {
-          this.user = data;
-        },
-        (error) => {
-          this.router.navigate(["/error", "not logged in, login to continue"]);
-        }
-      )
+        this.userId = parseInt(this.userId);
+        this.userService.getUserDetailsForUpdate(this.userId).subscribe(
+            (data) => {
+                this.user = data;
+                // Populate the form with user details
+                this.updateForm.patchValue({
+                    userName: data.userName,
+                    email: data.email,
+                    phone: data.phone,
+                    // You may want to exclude password-related fields here
+                });
+            },
+            (error) => {
+                this.router.navigate(["/error", "not logged in, login to continue"]);
+            }
+        );
     }
-  }
+}
+
 
 
   /* ------password validator------- */
@@ -86,5 +94,5 @@ export class UpdateUserDetailsComponent implements OnInit {
   logout() {
     localStorage.removeItem("userId");
     this.router.navigate(["/userLogin"]);
-  }
+  }
 }

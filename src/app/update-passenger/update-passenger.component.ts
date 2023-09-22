@@ -44,6 +44,21 @@ export class UpdatePassengerComponent implements OnInit {
       );
       this.route.paramMap.subscribe((params: ParamMap) => {
         this.passengerId = params.get("passengerId");
+        
+        // Fetch passenger details using passengerId
+        this.userService.getPassengerById(this.passengerId).subscribe(
+          (passenger) => {
+            // Update form fields with fetched passenger details
+            this.passengerForm.patchValue({
+              name: passenger.name,
+              age: passenger.age,
+              luggage: passenger.luggage,
+            });
+          },
+          (error) => {
+            this.router.navigate(["/error", "unable to fetch passenger details"]);
+          }
+        );
       });
     }
   }
@@ -65,7 +80,7 @@ export class UpdatePassengerComponent implements OnInit {
         }, error => {
           this.router.navigate(["/error", "unable to update passenger"]);
         }
-      );
-    }
-  }
+      );
+    }
+  }
 }

@@ -35,6 +35,7 @@ export class AdminHomeComponent implements OnInit {
   }
 
   logout(){
+    alert("do you want logout from session")
     localStorage.removeItem("adminId");
     this.router.navigate(["/adminLogin"]);
   }

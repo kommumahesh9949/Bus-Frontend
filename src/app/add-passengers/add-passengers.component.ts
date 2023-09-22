@@ -9,6 +9,7 @@ import { UserService } from '../services/user.service';
   styleUrls: ["./add-passengers.component.css"],
 })
 export class AddPassengersComponent implements OnInit {
+  msg:string
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
@@ -105,6 +106,7 @@ export class AddPassengersComponent implements OnInit {
 
       this.userService.addBooking(this.busNumber, this.userId, this.passengerArrayForm.value).subscribe(
         data => {
+          alert("booking Successful");
           this.router.navigate(["/userHome"]);
         },
         error => {

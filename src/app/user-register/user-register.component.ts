@@ -60,7 +60,7 @@ export class UserRegisterComponent implements OnInit {
           + "Kindly Note it down for future use..."
         )
         localStorage.setItem("userId", this.userData.userId);
-        this.router.navigate(["/userHome"]);
+        this.router.navigate(["/userLogin"]);
       },
       error => {
         this.router.navigate(["/error", "invalid data provided or unable to connect"]);

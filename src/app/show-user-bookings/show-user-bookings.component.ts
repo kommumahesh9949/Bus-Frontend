@@ -114,6 +114,7 @@ export class ShowUserBookingsComponent implements OnInit {
   }
 
   logout() {
+    confirm("Do want Logout");
     localStorage.removeItem("userId");
     this.router.navigate(["/userLogin"]);
   }

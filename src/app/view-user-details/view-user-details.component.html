@@ -2,20 +2,18 @@
     <div class="text-center text-white pt-2">
     </div>
     <div class="row">
-        <div class="col-sm-12 text-light rounded py-12">
-            <div class="p-4 md-3">
+        <div class="row justify-content-center mb-4">
+            <div class="d-flex justify-content-center">
                 <div *ngIf="user">
                     <h3><b><span class="text-danger"><i>Welcome to RedBus! {{user.userName}}</i></span></b></h3>
-                    <small><b><span class="text-danger">User Id: {{ user.userId }}</span></b></small><br />
+                    <small><b><span class="text-danger">User Id: {{ user.userId }}</span></b></small><br /><br/>
                     <button  class="btn btn-primary" routerLink="/userHome">Home</button>
-                    <button  class="btn btn-primary float-right" (click)="logout()">Logout</button>
+                  
 
                 </div>
             </div>
         </div>
     </div>
-    <br />
-    <br><br>
 
     <div class="jumbotron p-5 m-5 justify-content-center bg1" *ngIf="user" style="color: white;">
         <h3 class="text-center">

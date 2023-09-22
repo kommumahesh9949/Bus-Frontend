@@ -90,6 +90,7 @@ export class UserHomeComponent implements OnInit {
   }
 
   logout() {
+    alert("do  you want logout")
     localStorage.removeItem("userId");
     this.router.navigate(["/userLogin"]);
   }

@@ -1,22 +1,15 @@
 <div class="container-fluid bg">
     <div class="text-center text-white pt-2">
-    
     </div>
     <div class="row">
-        <div class="col-sm-12 text-light rounded py-12">
+        <div class="col-sm-25 text-light rounded py-15">
             <div class="p-4 md-3">
-                <div *ngIf="user">
-                    <h3><b><span class="text-danger"><i>Welcome to RedBus! {{user.userName}}</i></span></b></h3>
-                    <small><b><span class="text-danger">User Id: {{ user.userId }}</span></b></small><br />
+                <div *ngIf="user"> 
                     <button  class="btn btn-primary" routerLink="/userHome">Home</button>
-                    <button  class="btn btn-primary float-right" (click)="logout()">Logout</button>
-
-
                 </div>
             </div>
         </div>
     </div>
-    <br />
     <div class="jumbotron m-5 p-5" style="background-image: linear-gradient(315deg, #4c84bf 0%, #9c9a9c 74%)">
         <form class="form" [formGroup]="updateForm"  style="color:white" (ngSubmit)="submit()">
             <h3><b>Update User Details</b></h3>

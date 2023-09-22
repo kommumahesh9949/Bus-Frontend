@@ -56,6 +56,11 @@ export class UserService {
   updateUser(user){
     return this.http.post(this.baseUrl + "/updateUser",JSON.stringify(user),this.options).pipe(catchError(this.errorHandler));
   }
+  getUserDetailsForUpdate(userId): Observable<any> {
+    return this.http.get(`${this.baseUrl}/getUserDetailsForUpdate/${userId}`).pipe(
+      
+    );
+  }
 
   /* -------method to get user------- */
 
@@ -72,6 +77,9 @@ export class UserService {
   updatePassenger(passenger){
     return this.http.post(`${this.baseUrl}/updatePassenger`,JSON.stringify(passenger),this.options).pipe(catchError(this.errorHandler));
   }
+  getPassengerById(passengerId): Observable<any> {
+    return this.http.get(`${this.baseUrl}/getPassenger/${passengerId}`).pipe(catchError(this.errorHandler));
+  }
 
 
 

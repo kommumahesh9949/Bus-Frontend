@@ -11,6 +11,7 @@ import { AdminService } from "../services/admin.service";
   styleUrls: ["./add-bus-details.component.css"],
 })
 export class AddBusDetailsComponent implements OnInit {
+  msg:string
   constructor(
     private adminService: AdminService,
     private router: Router,
@@ -92,6 +93,7 @@ export class AddBusDetailsComponent implements OnInit {
     this.adminService.addBus(this.busForm.value).subscribe(
       data => {
         console.log(data);
+        alert("Details Added By admin")
         this.router.navigate(["/adminHome"]);
       },
       error => {
