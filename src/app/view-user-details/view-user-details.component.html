@@ -1,27 +1,24 @@
 <div class="container-fluid bg">
     <div class="text-center text-white pt-2">
+        <!-- Add any header content here -->
     </div>
-    <div class="row">
-        <div class="row justify-content-center mb-4">
-            <div class="d-flex justify-content-center">
-                <div *ngIf="user">
-                    <h3><b><span class="text-danger"><i>Welcome to RedBus! {{user.userName}}</i></span></b></h3>
-                    <small><b><span class="text-danger">User Id: {{ user.userId }}</span></b></small><br /><br/>
-                    <button  class="btn btn-primary" routerLink="/userHome">Home</button>
-                  
 
-                </div>
+    <div class="row justify-content-center mb-4">
+        <div class="col-md-6">
+            <div *ngIf="user" class="text-center">
+                <h3><b><span class="text-danger">Welcome to RedBus! {{user.userName}}</span></b></h3>
+                <p><b><span class="text-danger">User Id: {{ user.userId }}</span></b></p>
+                <button class="btn btn-primary" routerLink="/userHome">Home</button>
             </div>
         </div>
     </div>
 
-    <div class="jumbotron p-5 m-5 justify-content-center bg1" *ngIf="user" style="color: white;">
-        <h3 class="text-center">
-            User Details
-        </h3>
+    <div class="jumbotron p-5 m-5 bg1" *ngIf="user" style="color: white;">
+        <h3 class="text-center">User Details</h3>
         <br><br>
-        <div class="row justify-content-center">
-            <div class="col-sm-10">
+
+        <div class="row">
+            <div class="col-md-6">
                 <div class="row">
                     <div class="col-6">
                         <h6>User ID:</h6>
@@ -51,7 +48,7 @@
 
                 <div class="row">
                     <div class="col-6">
-                        <h6>email:</h6>
+                        <h6>Email:</h6>
                     </div>
                     <div class="col-6">
                         <h6>{{user.email}}</h6>
@@ -60,7 +57,6 @@
             </div>
         </div>
     </div>
-
 
 </div>
 <app-footer></app-footer>

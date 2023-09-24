@@ -14,7 +14,9 @@ export class UserService {
   *  **********change base url according to your server**************
   */
 
+ // private baseUrl = "http://ec2-54-225-33-210.compute-1.amazonaws.com:8086/user";
   private baseUrl = "http://localhost:8086/user";
+
 
   httpHeaders = new HttpHeaders({
     "Content-Type": "application/json",

@@ -28,6 +28,10 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { ToastComponent } from './toast/toast.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -42,7 +46,7 @@ import { ContactusComponent } from './contactus/contactus.component';
     ViewUserDetailsComponent,
     UpdateUserDetailsComponent,
     AddBusDetailsComponent, 
-    ViewAllBusDetailsComponent, UpdateBusComponent, AddPassengersComponent, UpdatePassengerComponent, PageNotFoundComponent, HomeComponent, ViewAllUsersComponentComponent, ViewAllBookingsComponent, HeaderComponent, FooterComponent, AboutusComponent, ContactusComponent
+    ViewAllBusDetailsComponent, UpdateBusComponent, AddPassengersComponent, UpdatePassengerComponent, PageNotFoundComponent, HomeComponent, ViewAllUsersComponentComponent, ViewAllBookingsComponent, HeaderComponent, FooterComponent, AboutusComponent, ContactusComponent, ToastComponent
   ],
   
   imports: [
@@ -52,6 +56,10 @@ import { ContactusComponent } from './contactus/contactus.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    
+   
+
+   
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -11,7 +11,9 @@ export class AdminService {
   constructor(private http: HttpClient) {}
 
 
+   //private baseUrl = "ec2-54-225-33-210.compute-1.amazonaws.com:8086/admin";
   private baseUrl = "http://localhost:8086/admin";
+
 
   httpHeaders = new HttpHeaders({
     "Content-Type": "application/json",

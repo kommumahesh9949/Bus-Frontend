@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 
 
-
 @Component({
   selector: "app-user-login",
   templateUrl: "./user-login.component.html",
@@ -12,11 +11,12 @@ import { UserService } from '../services/user.service';
 })
 
 export class UserLoginComponent implements OnInit {
-  @ViewChild('successMessage') successMessage: ElementRef;
+  toastMessage: string = '';
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private userService: UserService
+    private userService: UserService,
+  
   ) {}
 
   failure = { value: false };
@@ -43,11 +43,9 @@ export class UserLoginComponent implements OnInit {
         this.failure.value = false;
         console.log(this.userData.userId);
         localStorage.setItem("userId",this.userData.userId);
+        console.log("login succesfully");
         this.router.navigate(["/userHome"]);
-        this.showSuccessMessage();
-        setTimeout(() => {
-          this.router.navigate(["/userHome"]);
-        }, 6000); // Delay for 2 seconds (adjust as needed)
+        
       },
       
       (error) => {
@@ -56,13 +54,6 @@ export class UserLoginComponent implements OnInit {
       }
     );
   }
-  // Method to display the success message
-showSuccessMessage() {
-  this.successMessage.nativeElement.classList.add('show');
-  setTimeout(() => {
-    this.successMessage.nativeElement.classList.remove('show');
-  }, 100000); // Hide the message after 5 seconds (adjust as needed)
-}
-
 
 }
+

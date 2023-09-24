@@ -3,8 +3,6 @@
        
     </div>
     <div class="row">
-      
-        
             <div class="p-4 md-3">
                 <h3><b> <span class="text-danger"><i>Welcome,{{adminDetails.adminName}}</i></span></b></h3>
                 <div class="px-1 md-5" *ngIf="adminDetails">
@@ -17,11 +15,11 @@
     <hr/>
     <div class="row justify-content-center mb-4">
         <div class="d-flex justify-content-center">
-    <button type="submit"class="btn btn-primary"  routerLink="/addBusDetails">Add Bus Details</button>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-    <button type="submit" routerLink="/allBussDetails" class="btn btn-primary">View All Bus Details</button>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-    <button type="submit" routerLink="/viewAllBookings" class="btn btn-primary">View All Booking Details</button>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-    <button type="submit" routerLink="/getAllUsers" class="btn btn-primary">View All Registered Users</button>&nbsp;|&nbsp;&nbsp;
-    <button class="btn btn-primary float-right pd-5" (click)="logout()">Logout</button>                    
+    <button type="submit"class="btn btn-primary"  routerLink="/addBusDetails"> <i class="fas fa-bus"></i> Add Bus Details</button>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <button type="submit" routerLink="/allBussDetails" class="btn btn-primary">  <i class="fas fa-eye"></i> View All Bus Details</button>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <button type="submit" routerLink="/viewAllBookings" class="btn btn-primary">  <i class="fas fa-eye"></i> View All Booking Details</button>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <button type="submit" routerLink="/getAllUsers" class="btn btn-primary"><i class="fas fa-eye"></i> View All Registered Users</button>&nbsp;|&nbsp;&nbsp;
+    <button class="btn btn-primary float-right pd-5" (click)="logout()"><i class="fas fa-sign-out-alt"></i>Logout</button>                    
 </div>
 </div>
 <app-footer></app-footer>
