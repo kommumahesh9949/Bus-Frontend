@@ -35,6 +35,8 @@
                     <small class="text-danger"
                         *ngIf="passengerForm.controls.name.invalid && passengerForm.controls.name.touched">*Mandatory
                         Field</small>
+                        <small class="text-danger"
+                        *ngIf="passengerForm.controls.name.errors?.pattern">*Only characters and spaces are allowed</small>
                 </div>
 
                 <div class="form-group col-md-4">
@@ -66,7 +68,7 @@
                 </div>
             </div>
             <div align="center">
-                <input type="submit" value="update Passenger" class="btn btn-success">
+                <input type="submit" value="update Passenger" class="btn btn-success"[disabled]="passengerForm.invalid">
             </div>
         </form>
 

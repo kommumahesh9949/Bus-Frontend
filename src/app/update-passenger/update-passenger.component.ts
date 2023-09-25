@@ -20,7 +20,7 @@ export class UpdatePassengerComponent implements OnInit {
   passengerId = null;
 
   passengerForm = this.formBuilder.group({
-    name: [null, Validators.required],
+    name: [null, [Validators.required, Validators.pattern(/^[A-Za-z\s]*$/)]],
     age: [null, [Validators.required, Validators.min(1), Validators.max(100)]],
     luggage: [
       null,

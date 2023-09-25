@@ -117,6 +117,7 @@ export class UpdateBusComponent implements OnInit {
     }
     this.adminService.modifyBus(data).subscribe(
       data => {
+        alert("Updated SuccessFully");
         this.router.navigate(["/adminHome"]);
       }, error => {
         this.router.navigate(["/error", "unable to update"]);

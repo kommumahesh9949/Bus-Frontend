@@ -58,7 +58,7 @@ export class AddPassengersComponent implements OnInit {
 
   addPassengerGroup() {
     return this.formBuilder.group({
-      name: [null, [Validators.required]],
+      name: [null, [Validators.required, Validators.pattern(/^[A-Za-z\s]*$/)]],
       age: [
         null,
         [Validators.required, Validators.min(1), Validators.max(100)],

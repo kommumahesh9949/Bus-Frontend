@@ -30,14 +30,14 @@ export class AddBusDetailsComponent implements OnInit {
 
 
   busForm = this.formBuilder.group({
-    departureBusstop: [null, Validators.required],
-    arrivalBusstop: [null, Validators.required],
+    departureBusstop: [null, [Validators.required, Validators.pattern(/^[A-Za-z\s]*$/)]],
+    arrivalBusstop: [null, [Validators.required, Validators.pattern(/^[A-Za-z\s]*$/)]],
     departureDate: [null, [Validators.required,this.departureDateValidator]],
     arrivalDate: [null, [Validators.required]],
     availableSeats: [null,[Validators.required,Validators.max(100),Validators.min(0)]],
     arrivalTime: [null, Validators.required],
     departureTime: [null, Validators.required],
-    busVendor: [null, Validators.required],
+    busVendor: [null, [Validators.required, Validators.pattern(/^[A-Za-z\s]*$/)]],
     cost: [null, [Validators.required,Validators.min(1),Validators.max(10000)]],
   },{validators:this.arrivalDateValidator});
 
